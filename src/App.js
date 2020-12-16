@@ -22,7 +22,12 @@ class App extends Component{
   render() {
     return(
         <div className="App">
-          <input type='text' placeholder='search monsters' onChange={e => this.state({searchField: e.target.value})}/>
+          <input type='text'
+                 placeholder='search monsters'
+                 onChange={e => {
+                   this.setState({searchField: e.target.value},()=>{console.log(this.state)})
+
+                 }}/>
           <CardList monsters={this.state.monsters}/>
         </ div>
     )
